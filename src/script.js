@@ -1,105 +1,104 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'dat.gui'
 
 // Debug
-const gui = new dat.GUI()
 
-// Canvas
-const canvas = document.querySelector('canvas.webgl')
 
-// Scene
-const scene = new THREE.Scene()
+// // Canvas
+// const canvas = document.querySelector('canvas.webgl')
 
-// Objects
-const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+// // Scene
+// const scene = new THREE.Scene()
 
-// Materials
+// // Objects
+// const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
 
-const material = new THREE.MeshBasicMaterial()
-material.color = new THREE.Color(0xff0000)
+// // Materials
 
-// Mesh
-const sphere = new THREE.Mesh(geometry,material)
-scene.add(sphere)
+// const material = new THREE.MeshBasicMaterial()
+// material.color = new THREE.Color(0xff0000)
 
-// Lights
+// // Mesh
+// const sphere = new THREE.Mesh(geometry,material)
+// scene.add(sphere)
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
-pointLight.position.x = 2
-pointLight.position.y = 3
-pointLight.position.z = 4
-scene.add(pointLight)
+// // Lights
 
-/**
- * Sizes
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-}
+// const pointLight = new THREE.PointLight(0xffffff, 0.1)
+// pointLight.position.x = 2
+// pointLight.position.y = 3
+// pointLight.position.z = 4
+// scene.add(pointLight)
 
-window.addEventListener('resize', () =>
-{
-    // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
+// /**
+//  * Sizes
+//  */
+// const sizes = {
+//     width: window.innerWidth,
+//     height: window.innerHeight
+// }
 
-    // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
+// window.addEventListener('resize', () =>
+// {
+//     // Update sizes
+//     sizes.width = window.innerWidth
+//     sizes.height = window.innerHeight
 
-    // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
+//     // Update camera
+//     camera.aspect = sizes.width / sizes.height
+//     camera.updateProjectionMatrix()
 
-/**
- * Camera
- */
-// Base camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 2
-scene.add(camera)
+//     // Update renderer
+//     renderer.setSize(sizes.width, sizes.height)
+//     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+// })
 
-// Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+// /**
+//  * Camera
+//  */
+// // Base camera
+// const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+// camera.position.x = 0
+// camera.position.y = 0
+// camera.position.z = 2
+// scene.add(camera)
 
-/**
- * Renderer
- */
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-})
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+// // Controls
+// // const controls = new OrbitControls(camera, canvas)
+// // controls.enableDamping = true
 
-/**
- * Animate
- */
+// /**
+//  * Renderer
+//  */
+// const renderer = new THREE.WebGLRenderer({
+//     canvas: canvas
+// })
+// renderer.setSize(sizes.width, sizes.height)
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-const clock = new THREE.Clock()
+// /**
+//  * Animate
+//  */
 
-const tick = () =>
-{
+// const clock = new THREE.Clock()
 
-    const elapsedTime = clock.getElapsedTime()
+// const tick = () =>
+// {
 
-    // Update objects
-    sphere.rotation.y = .5 * elapsedTime
+//     const elapsedTime = clock.getElapsedTime()
 
-    // Update Orbital Controls
-    // controls.update()
+//     // Update objects
+//     sphere.rotation.y = .5 * elapsedTime
 
-    // Render
-    renderer.render(scene, camera)
+//     // Update Orbital Controls
+//     // controls.update()
 
-    // Call tick again on the next frame
-    window.requestAnimationFrame(tick)
-}
+//     // Render
+//     renderer.render(scene, camera)
 
-tick()
+//     // Call tick again on the next frame
+//     window.requestAnimationFrame(tick)
+// }
+
+// tick()
