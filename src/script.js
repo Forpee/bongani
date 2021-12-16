@@ -9,6 +9,8 @@ canvas.height = rect.height;
 const raindropFx = new RaindropFX({
     canvas: canvas,
 	mist: false,
+	backgroundBlurSteps: 1,
+	
 	
   
   
