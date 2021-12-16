@@ -8,8 +8,8 @@ canvas.height = rect.height;
 
 const raindropFx = new RaindropFX({
     canvas: canvas,
-    mist: false,
-    backgroundBlurSteps: 1,
+	mist: false,
+	
   
   
     
@@ -17,11 +17,7 @@ const raindropFx = new RaindropFX({
   
 });
 raindropFx.setBackground("https://res.cloudinary.com/bobu/image/upload/v1638463418/bongani/Header_t2oyd7.jpg");
-window.onresize = () =>
-{
-    const rect = canvas.getBoundingClientRect();
-    raindropFx.resize(rect.width, rect.height);
-}
+
 
 raindropFx.start();
 
