@@ -3,6 +3,7 @@ import RaindropFX from 'raindrop-fx'
 import ScrollReveal from 'scrollreveal'
 const canvas = document.querySelector("#static-rain");
 const rect = canvas.getBoundingClientRect();
+
 canvas.width = rect.width;
 canvas.height = rect.height;
 
@@ -19,7 +20,11 @@ const raindropFx = new RaindropFX({
   
 });
 raindropFx.setBackground("https://res.cloudinary.com/bobu/image/upload/v1638463418/bongani/Header_t2oyd7.jpg");
-
+window.onresize = () =>
+{
+    const rect = canvas.getBoundingClientRect();
+    raindropFx.resize(rect.width, rect.height);
+}
 
 raindropFx.start();
 
